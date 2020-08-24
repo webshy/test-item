@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .circle-one {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      margin: 50px auto;
+      overflow: hidden;
+    }
+
+    .circle-one-l,
+    .circle-one-l-in {
+      width: 100px;
+      height: 200px;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      overflow: hidden;
+    }
+
+    .circle-one-l-in {
+      transform-origin: 100% 50%;
+      transform: rotate(-180deg);
+      animation: circle_one_l linear 2s forwards;
+    }
+
+    .circle-one-l-in:after {
+      content: ' ';
+      position: absolute;
+      left: ;
+      top: ;
+      border-radius: 50%;
+      border: 10px solid #000;
+      width: 180px;
+      height: 180px;
+    }
+
+    .circle-one-r,
+    .circle-one-r-in {
+      width: 100px;
+      height: 200px;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      overflow: hidden;
+    }
+
+    .circle-one-r-in {
+      transform: rotate(-180deg);
+      transform-origin: 0% 50%;
+      animation: circle_one_r linear 2s 2s forwards;
+    }
+
+    .circle-one-r-in:after {
+      content: ' ';
+      position: absolute;
+      left: -100px;
+      top: ;
+      border-radius: 50%;
+      border: 10px solid #000;
+      width: 180px;
+      height: 180px;
+    }
+
+    @keyframes circle_one_l {
+      0% {
+        transform: rotate(-180deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes circle_one_r {
+      0% {
+        transform: rotate(-180deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+
+    .circle-two {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      margin: 50px auto;
+    }
+
+    .circle-two-l {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      left: ;
+      top: ;
+      clip: rect(0, 100px, auto, 0);
+    }
+
+    .circle-two-l:after {
+      content: ' ';
+      background: #000;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      position: absolute;
+      left: ;
+      top: ;
+      clip: rect(0, 100px, auto, 0);
+      transform: rotate(-180deg);
+      animation: circle_two_l linear 2s forwards;
+    }
+
+    .circle-two-r {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      left: ;
+      top: ;
+      clip: rect(0, auto, auto, 100px);
+    }
+
+    .circle-two-r:after {
+      content: ' ';
+      background: #000;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      position: absolute;
+      left: ;
+      top: ;
+      clip: rect(0, auto, auto, 100px);
+      transform: rotate(-180deg);
+      animation: circle_two_r linear 2s 2s forwards;
+    }
+
+    .circle-two-mask {
+      width: 180px;
+      height: 180px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -90px;
+      margin-left: -90px;
+    }
+
+    @keyframes circle_two_l {
+      0% {
+        transform: rotate(-180deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes circle_two_r {
+      0% {
+        transform: rotate(-180deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="circle-one">
+    <div class="circle-one-l">
+      <div class="circle-one-l-in"></div>
+    </div>
+    <div class="circle-one-r">
+      <div class="circle-one-r-in"></div>
+    </div>
+  </div>
+
+  <div class="circle-two">
+    <div class="circle-two-l"></div>
+    <div class="circle-two-r"></div>
+    <div class="circle-two-mask"></div>
+  </div>
+</body>
+
+</html>
